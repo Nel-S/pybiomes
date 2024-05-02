@@ -94,6 +94,14 @@ class Biome(IntEnum): # biomes.BiomeID
 	DEEP_DARK = 183
 	MANGROVE_SWAMP = 184
 	CHERRY_GROVE = 185
+
+	class TemperatureCategory(IntEnum): # BiomeTemperatureCategory
+		OCEANIC = 0
+		WARM = 1
+		LUSH = 2
+		COLD = 3
+		FREEZING = 4
+		SPECIAL = 5
 	
 	@classmethod
 	def existsInVersion(cls, biome: "Biome", version: Version) -> bool: # layers.biomeExists()
@@ -246,3 +254,11 @@ class Biome(IntEnum): # biomes.BiomeID
 	def isSnowyBiome(cls, biome: "Biome") -> bool: # layers.isSnowy()
 		"""Returns whether `biome` qualifies as a snowy biome."""
 		return biome in {cls.FROZEN_OCEAN, cls.FROZEN_RIVER, cls.ICE_SPIKES, cls.SNOWY_BEACH, cls.SNOWY_MOUNTAINS, cls.SNOWY_TAIGA, cls.SNOWY_TAIGA_HILLS, cls.SNOWY_TAIGA_MOUNTAINS, cls.SNOWY_TUNDRA}
+
+class BiomeTree: # biomenoise.BiomeTree
+	length: int
+	order: int
+	steps: list[int]
+	parameters: list[int]
+	nodes: list[int]
+	...
