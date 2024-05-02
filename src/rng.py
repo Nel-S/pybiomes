@@ -1,9 +1,9 @@
 from .base import (
-    overload, Sequence,
     THIRTY_TWO_BITS, FORTY_EIGHT_BITS, SIXTY_FOUR_BITS, ONE_HUNDRED_TWENTY_EIGHT_BITS, FLOAT_LENGTH, DOUBLE_LENGTH,
     toSigned, toUnsigned, rotateLeft,
     Coordinate
 )
+from typing import overload, Sequence
 
 class Random:
     """Implementation of [java.util.Random](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Random.html) (which uses a [linear congruential generator](https://en.wikipedia.org/wiki/Linear_congruential_generator) with a 2^48 state space). This is most commonly used for pre-Java 1.18 mechanics, potential structure positions, and a world's Nether and End."""

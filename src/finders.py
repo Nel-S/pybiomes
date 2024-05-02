@@ -1,5 +1,4 @@
 from .base import (
-    IntEnum, Sequence,
     toSigned,
     THIRTY_TWO_BITS,
     Version
@@ -10,8 +9,9 @@ from .rng import *
 from .noise import *
 from .biomes import *
 from .layers import *
-from .generator import IntFlag
 from .generator import *
+from enum import Enum, IntFlag
+from typing import Sequence
 
 def isSlimeChunk(seed: int, chunkCoord: Sequence) -> bool: # finders.isSlimeChunk
     """"""
@@ -23,7 +23,7 @@ def getShadowSeed(seed: int, version: Version | None = None) -> int:
     if version is not None and (version < Version.V1_0 or Version.V1_17 < version): raise RuntimeError("Shadow seeds only exist between versions 1.0 and 1.17 inclusive.")
     return toSigned(-7379792620528906219 - seed)
 
-class StructureGenerator(IntEnum):
+class StructureGenerator(Enum):
     GENERIC_FEATURE = 0
     DESERT_PYRAMID = 1
     JUNGLE_PYRAMID = JUNGLE_TEMPLE = 2

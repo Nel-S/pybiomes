@@ -1,10 +1,11 @@
-from .base import IntEnum, Coordinate, Range, Version
+from .base import Coordinate, Range, Version
 # from .base import *
 from .rng import Random, SeedHelper
 # from .rng import *
 from .noise import PerlinNoise
 # from .noise import *
 # from .biomes import *
+from enum import IntEnum
 
 class Layer:
     class ID(IntEnum):

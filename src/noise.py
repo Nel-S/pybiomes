@@ -1,12 +1,12 @@
 from .base import (
-    overload, IntEnum, Sequence,
     EIGHT_BITS, THIRTY_TWO_BITS,
     indexedLerp, lerp, doubleLerp, tripleLerp,
     Position, Coordinate, SplineStack, Dimension, Version
 )
 from .rng import Random, Xoroshiro
+from enum import IntEnum
 from math import sqrt
-from typing import Literal
+from typing import Literal, overload, Sequence
 
 class SimplexNoise:
     # TODO: Find range

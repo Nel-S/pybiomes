@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """A port of Cubiomes to Python."""
 
 from .base import (
